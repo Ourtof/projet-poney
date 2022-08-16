@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'PonyRides';
-    src: url('font/PonyRides.ttf') format('truetype');
+    src: url('../font/PonyRides.ttf') format('truetype');
 }
 
 main {
@@ -23,8 +23,6 @@ h1 {
 
 h3 {
     font-size: 2em;
-    filter: invert(1);
-    color: blue;
 }
 
 h1, h3, span {
@@ -34,28 +32,52 @@ h1, h3, span {
 }
 
 img {
-    max-width: max-content;
+    max-width: 100%;
 }
 
 #container_img {
-    display: flex;
-    justify-content: center;
-    margin-top: 8%;
+    margin-top: 6%;
+    height: 50%;
+    /* overflow: hidden; */
+    border: solid 3px blue;
+    position: relative;
 }
 
-.arrow1 {
-    height: 30px;
-    width: 30px;
-    border: 2px solid white;
-    border-width: 1px 1px 0 0;
-    transform: rotate(45deg);
+#carrousel {
+    /* transform: translate(ease 0.5s all); */
+    display: flex;
+    flex-direction: row;
+    /* overflow: hidden; */
+    border: solid 3px red;
+    width: 90%;
+    position: absolute;
+    left: 45%;
+
+}
+
+.poney {
+    /* display: inline-block; */
+    /* width: 20%;
+    height: auto;
+    overflow: hidden;
+    margin: 5%; */
+    border: solid 3px black;
+
+    
+}
+
+#btn_wrapper {
+    /* position: relative; */
+    /* overflow: hidden; */
 }
 
 .arrow {
-    height: 5vw; 
-    width: 5vw;
-	border: 1px solid white;
-	border-width: 4px 4px 0 0;
-    border-radius: 5%;
-	transform: rotate(45deg);
-  }
+    width: 5%;
+    height: 20%;
+    margin-top: 10%;
+    cursor: pointer;
+}
+
+#left {
+    /* position: absolute; */
+}
