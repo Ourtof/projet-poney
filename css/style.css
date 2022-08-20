@@ -32,52 +32,78 @@ h1, h3, span {
 }
 
 img {
-    max-width: 100%;
+    max-width: 300px;
 }
 
 #container_img {
     margin-top: 6%;
     height: 50%;
-    /* overflow: hidden; */
     border: solid 3px blue;
-    position: relative;
 }
 
 #carrousel {
-    /* transform: translate(ease 0.5s all); */
-    display: flex;
-    flex-direction: row;
-    /* overflow: hidden; */
+    overflow: hidden;
     border: solid 3px red;
-    width: 90%;
-    position: absolute;
-    left: 45%;
+    /* width: 20%; */
+    /* height: 80%; */
+    margin-left: 40%;
+}
 
+#panneau {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    transition: all 0.5s ease;
 }
 
 .poney {
-    /* display: inline-block; */
-    /* width: 20%;
-    height: auto;
-    overflow: hidden;
-    margin: 5%; */
     border: solid 3px black;
+    position: relative;
+}
 
-    
+.hover {
+    background-color: rgba(133, 30, 112, 0.7);
+    border-radius: 50px;
+    position: absolute;
+    top: -305px;
+    height: 100%;
+    width: 100%;
+}
+
+.poney:hover .hover {
+    animation: down 1s ease;
+    animation-fill-mode: forwards;
 }
 
 #btn_wrapper {
-    /* position: relative; */
-    /* overflow: hidden; */
+    position: relative;
 }
 
 .arrow {
     width: 5%;
-    height: 20%;
-    margin-top: 10%;
     cursor: pointer;
 }
 
 #left {
-    /* position: absolute; */
+    position: absolute;
+    bottom: 100px;
+    left: 500px;
+}
+
+#right {
+    position: absolute;
+    bottom: 100px;
+    right: 500px;
+}
+
+/*********** ANIMATIONS ***********/
+
+@keyframes down {
+    from {
+        top: -305px
+    }
+    
+    to {
+        top: 0px;
+    }
 }
