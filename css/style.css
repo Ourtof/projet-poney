@@ -31,6 +31,10 @@ h1, h3, span {
     font-family: 'PonyRides';
 }
 
+p {
+    text-align: center;
+}
+
 img {
     max-width: 300px;
 }
@@ -44,8 +48,6 @@ img {
 #carrousel {
     overflow: hidden;
     border: solid 3px red;
-    /* width: 20%; */
-    /* height: 80%; */
     margin-left: 40%;
 }
 
@@ -87,13 +89,20 @@ img {
 #left {
     position: absolute;
     bottom: 100px;
-    left: 500px;
+    left: 300px;
 }
 
 #right {
     position: absolute;
     bottom: 100px;
-    right: 500px;
+    right: 200px;
+}
+
+#jauge {
+    height: 10px;
+    width: 100px;
+    border: solid 1px black;
+    align-items: center;
 }
 
 /*********** ANIMATIONS ***********/
