@@ -11,19 +11,68 @@ function translate() {
 };
 
 function masquer() {
-    if (p == 2) {
+    if (y == 2) {
         document.getElementById('left').src='./img/arrowDis.png';
     } else {
         document.getElementById('left').src='./img/arrow.png';
     };
 
-    if (p == -2) {
+    if (y == -2) {
         document.getElementById('right').src='./img/leftDis.png';
     } else {
         document.getElementById('right').src='./img/right.png';
     };
 };
 
+function bar(myDiv, myArray, myPoney) {
+    
+        let divContain = document.createElement('div');
+        //creation wrapper stat poney
+        let wrapperStrength = document.createElement('div');
+        let wrapperSpeed = document.createElement('div');
+        let wrapperCharisma = document.createElement('div');
+
+        let strengthSpan = document.createElement('span');
+        let speedSpan = document.createElement('span');
+        let charismaSpan = document.createElement('span');
+
+        divContain.classList.add('contain');
+
+        //creation barres colorées des stats
+        let strengthBar = document.createElement('div');
+        let speedBar = document.createElement('div');
+        let charismaBar = document.createElement('div');
+
+        strengthSpan.innerText = 'Force :';
+        speedSpan.innerText = 'Vitesse :';
+        charismaSpan.innerText = 'Charisme :';
+    
+
+        strengthBar.classList.add('valueBar');
+        wrapperStrength.append(strengthBar);
+        speedBar.classList.add('valueBar');
+        wrapperSpeed.append(speedBar);
+        charismaBar.classList.add('valueBar');
+        wrapperCharisma.append(charismaBar);
+
+        //assignation des valeurs des stats au style des barres colorées
+        strengthBar.style.width = myPoney.strength + '%';
+        speedBar.style.width = myPoney.speed + '%';
+        charismaBar.style.width = myPoney.charisma + '%';
+
+        wrapperStrength.classList.add('bar');
+        wrapperCharisma.classList.add('bar');
+        wrapperSpeed.classList.add('bar');
+
+        myDiv.append(divContain);
+        divContain.append(strengthSpan);
+        divContain.append(wrapperStrength);
+        divContain.append(speedSpan);
+        divContain.append(wrapperSpeed);
+        divContain.append(charismaSpan);
+        divContain.append(wrapperCharisma);
+}; 
+  
 /******** END FONCTIONS *********/
 
 
@@ -38,6 +87,9 @@ carrousel.style.width = 300 + 'px';
 let poney = document.querySelectorAll('.poney');
 let jauge = document.querySelectorAll('.jauge');
 const resume = ["I'm Pinkie Pie", "I'm Rainbow Dash", "I'm Twilight Sparkle", "I'm Rarity", "I'm Fluttershy"];
+const carac = ['Vitesse :', 'Force :', 'Charisme :'];
+
+
 
 for (let i = 0; i < poneys.length; i++) {
     let div = document.createElement('div');
@@ -52,26 +104,19 @@ for (let i = 0; i < poneys.length; i++) {
     let div2 = document.createElement('div');
     div2.classList.add('hover');
     div.append(div2);
-    h3 = document.createElement('h3');
-    h3.innerText = poneys[i].name;
-    div2.prepend(h3);
+    let h2 = document.createElement('h2');
+    h2.innerText = poneys[i].name;
+    div2.prepend(h2);
     let p = document.createElement('p');
     p.innerText = resume[i];
     div2.append(p);
-    let div3 = document.createElement('div');
-    div3.classList.add('jauge');
-    div.append(div3);
-    console.log(div3);
+
+
+
+    // jauge
+    bar(div2, carac, poneys[i]);
+    
 };
-
-
-
-// poneys.forEach(poney => {
-//     let div2 = document.createElement('div');
-//     div2.classList.add('hover');
-//     poneys.append(div2);
-// });
-
 
 left.addEventListener('click', function() {
     if(y < 2) {
@@ -89,36 +134,10 @@ right.addEventListener('click', function() {
     masquer();
 });
 
-// let poney = document.querySelectorAll('.poney div');
-// poney.forEach(poney => {
-//     div.addEventListener('mouseover', () => {
-//         div.classList.add('hover');
-//     });
-// });
 
 
-// let poney = document.querySelectorAll('.poney');
-// poney.addEventListener('mouseover',() => {
-//     div.style.backgroundColor = 'purple';
-// });
+function addition(a,b){
+    return a + b;
+}
 
-
-
-// poney.forEach(poney => {
-//     let div2 = document.createElement('div');
-//     div2.classList.add('hover');
-//     poney.append(div2);
-//     let hover = document.querySelector('.hover');
-//     let h3 = document.createElement('h3');
-//     h3.innerText = poneys.name;
-//     hover.append(h3);
-// });
-
-
-// let poney = document.querySelectorAll('.poney');
-
-// for (let i = 0; i < nombre; i++) {
-//     let div2 = document.createElement('div');
-//     div2.classList.add('.hover');
-//     poney.append(div2);
-// }
+let resultat = addition(45,65)
